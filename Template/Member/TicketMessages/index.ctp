@@ -1,17 +1,17 @@
 <?php
-$this->assign('title', __('tickets'));
+$this->assign('title', __('TicketMessages'));
 $this->assign('description', '');
-$this->assign('content_title', __('tickets'));
+$this->assign('content_title', __('TicketMessages'));
 ?>
 
 
 <div class="box box-primary">
 <div class="box-body">
+<?= $tickets; ?>
+    <?= $this->Form->create($ticketMessages); ?>
 
-    <?= $this->Form->create($tickets); ?>
-
-    <?=
-    $this->Form->input('message', [
+  <?=
+    $this->Form->input('ticket_message.message', [
         'label' => __('Message'),
         'class' => 'form-control',
         'type' => 'text'

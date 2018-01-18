@@ -10,16 +10,36 @@ class TicketsTable extends Table
     public function initialize(array $config)
     {
         parent::initialize($config);
-
+        /*
+        $this->table('tickets');
         $this->displayField('id');
         $this->primaryKey('id');
-
         $this->addBehavior('Timestamp');
-
-        $this->hasMany('TicketMessages', [
-            'foreignKey' => 'id',
-            'joinTable' => 'tickets'
+        $this->hasMany('TicketMessages', [ //OneToMany hasMany
+            'foreignKey' => 'ticket_id'
+             
         ]);
+     
+*/
+$this->table('tickets');
+$this->displayField('id');
+$this->primaryKey('id');
+$this->addBehavior('Timestamp');
+$this->hasMany('TicketMessages', [
+    'foreignKey' => 'ticket_id'    
+]);
+
+
+        // parent::initialize($config);
+        // $this->displayField('id');
+        // $this->primaryKey('id');
+
+        // $this->addBehavior('Timestamp');
+
+        // $this->hasMany('TicketMessages', [
+        //     'foreignKey' => 'id',
+        //     'joinTable' => 'tickets'
+        // ]);
       
      
     }
